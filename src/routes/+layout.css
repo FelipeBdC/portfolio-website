@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+
+html {
+    --dark-gray: rgb(40,40,40);
+    --light-gray: rgb(60,60,60);
+    --lighter-gray: rgb(80,80,80);
+
+    --color-60p: #282A3A;
+    --color-30p: #5B8FB9;
+    --color-10p: #FFD717;
+
+    font-family: 'Wix Madefor Display', sans-serif;
+    color: white;
+    background-color: black;
+
+    width: min(100ch, calc(100% - 4rem));
+    margin-inline: auto;
+}
+
+body {
+    margin: 0;
+}
