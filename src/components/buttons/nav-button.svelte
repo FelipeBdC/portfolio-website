@@ -9,28 +9,33 @@
 
 <style>
     button {
-        color: red;
-
         all: unset;
         cursor: pointer;
         min-width: 12ch;
         text-align: center;        
-        border: var(--color-30p) solid 2px;
         padding: 1ch;
+
+        border: 0.2rem solid;
+        border-color: var(--color-30p);
         border-radius: 2ch;
-        transition: 200ms;
+
+        transition: 150ms;
+
+        color: white;
     }
     button:hover {
-        background-color: var(--color-30p);
+        color: black;
+        background-color: white;
+        border-color: white;
     }
 
     .selected {
-        border-color: var(--color-10p);
-        background-color: var(--color-10p);
         color: black;
+        background-color: var(--color-10p);
+        border-color: var(--color-10p);
     }
     .selected:hover {
-        border-color: var(--color-10p);
         background-color: var(--color-10p);
+        border-color: var(--color-10p);
     }
 </style>

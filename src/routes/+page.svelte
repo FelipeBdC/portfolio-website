@@ -1,29 +1,33 @@
 <script lang="ts">
-    import "./+layout.css"
-    import NavButton from "../components/buttons/nav-button.svelte";
+    import "./+layout.css";
+    import MinecraftTab from "./tabs/minecraft-tab.svelte";
+    import PixelArtTab from "./tabs/pixel-art-tab.svelte";
+	import MarketplaceTab from "./tabs/marketplace-tab.svelte";
+	import NavButton from "../components/buttons/nav-button.svelte";
 
-    import PersonalTab from "./tabs/personal_tab.svelte";
-    import ProfessionalTab from "./tabs/professional_tab.svelte";
-
-    var tab_component = PersonalTab;
-
-    var current_tab: string = "personal"
+    var tab_component = MinecraftTab;
+    var current_tab: string = "minecraft";
 
     function on_click(id: string) {
         current_tab = id
-        check_tabs(id)
+        check_tabs(current_tab)
     }
 
     function check_tabs(id: string) {
         switch(id){
-            case "personal": {
-                console.log("personal!");
-                tab_component = PersonalTab;
+            case "minecraft": {
+                tab_component = MinecraftTab;
+                console.log("minecraft");
                 break;
             }
-            case "professional": {
-                console.log("professional shit")
-                tab_component = ProfessionalTab;
+            case "marketplace": {
+                tab_component = MarketplaceTab;
+                console.log("marketplace");
+                break;
+            }
+            case "pixelart": {
+                tab_component = PixelArtTab;
+                console.log("pixelart");
                 break;
             }
         }
@@ -31,43 +35,27 @@
 </script>
 
 
-<header>
-    <h1>Hello</h1>
-    <p>My name is Felipe, here's some of my work</p>
-    <div class="ul-wrapper">
-        <ul>
-            <NavButton text="Personal" on_click={() => {on_click("personal")}} selected={current_tab == "personal"}></NavButton>
-            <NavButton text="Professional" on_click={() => {on_click("professional")}} selected={current_tab == "professional"}></NavButton>
-        </ul>
-    </div>
-</header>
+<nav>
+    <ul>
+        <NavButton text="Minecraft" on_click={() => {on_click("minecraft")}} selected={current_tab=="minecraft"}></NavButton>
+        <NavButton text="Marketplace" on_click={() => {on_click("marketplace")}} selected={current_tab=="marketplace"}></NavButton>
+        <NavButton text="Pixel Art" on_click={() => {on_click("pixelart")}} selected={current_tab=="pixelart"}></NavButton>
+    </ul>
+</nav>
 
 <svelte:component this={tab_component}/>
 
 
 
-
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
-
-    header {
-        text-align: center;
-        margin-bottom: 2rem;
-        background-color: var(--color-60p);
-        padding: 1rem;
-        border-radius: 0 0 1ch 1ch;
-    }
-    header > h1 {
-        font-family: 'Freehand', cursive;
-        padding: 0;
-        margin: 0;
-        font-size: 4rem;
+    nav {
+        margin: 2rem 10rem 2rem 10rem;
     }
 
-    ul {
-        display: flex;
-        justify-content:center;
+    nav > ul {
         padding: 0;
-        gap: 2rem;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
     }
 </style>
