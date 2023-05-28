@@ -8,7 +8,7 @@
 <div class="team-card">
     <img src={logo} alt="{team_name} Logo">
     <div class="info">
-        <h2><strong>{team_name}</strong></h2>
+        <h2><strong>{team_name},</strong></h2>
         <p>{description}</p>
     </div>
 </div>

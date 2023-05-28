@@ -1,24 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 
 html {
-    --color-60p: #222831;
-    --color-30p: #007880;
-    --color-10p: #FDC57B;
-    --color-10p-shade: #e99f4b;
+
+    --neutral-color-0: #16171d;
+    --neutral-color-1: #414249;
+    --neutral-color-2: #6b6b6b;
+
+    --primary-color-0: #0f058d;
+    --primary-color-1: #1e4fd6;
+    --primary-color-2: #3baefc;
+
+    --secondary-color-0: #b45d00;
+    --secondary-color-1: #e68b00;
+    --secondary-color-2: #f9c510;
 
     font-family: 'Wix Madefor Display', sans-serif;
     color: white;
     
     background-repeat: no-repeat;
-    background-color: var(--color-60p);
+    background-color: var(--neutral-color-0);
     height: 100%;
 
     display: grid;
     place-items: center top;
+    width: min(100ch, calc(100% - 4rem));
+    margin-inline: auto;
 }
 
 body {
-    width: min(100ch, calc(100% - 4rem));
     margin: 0;
-    margin-inline: auto;
+}
+
+@media(max-width: 750px) {
+    html {
+        width: 100%;
+    }
 }

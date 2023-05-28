@@ -1,41 +1,36 @@
 <script lang="ts">
-    export var text: String = "Button";
-    export var selected: boolean = false;
-    export var on_click = () => {};
+    export var href: string = "";
+    export var icon: any; // fuck you ts users
 </script>
 
 
-<button class:selected="{selected}" on:click={on_click}>{text}</button>
+<a href={href}><img src={icon} alt="Icon"></a>
 
 <style>
-    button {
+    a {
         all: unset;
-        cursor: pointer;
-        min-width: 12ch;
-        text-align: center;        
-        padding: 1ch;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 1rem;
 
-        border: 0.2rem solid;
-        border-color: var(--color-30p);
-        border-radius: 2ch;
+        width: 14ch;
 
-        transition: 150ms;
+        background-color: var(--secondary-color-2);
+        color: black;
 
+        display: grid;
+        place-items: center;
+
+    }
+
+    a > img {
+        width: 6ch;
+        height: 6ch;
+    }
+
+    a:hover, a:focus {
+        background-color: var(--primary-color-2);
         color: white;
     }
-    button:hover {
-        color: black;
-        background-color: white;
-        border-color: white;
-    }
 
-    .selected {
-        color: black;
-        background-color: var(--color-10p);
-        border-color: var(--color-10p);
-    }
-    .selected:hover {
-        background-color: var(--color-10p);
-        border-color: var(--color-10p);
-    }
+
 </style>

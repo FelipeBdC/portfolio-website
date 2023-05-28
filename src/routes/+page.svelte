@@ -1,61 +1,124 @@
 <script lang="ts">
-    import "./+layout.css";
-    import MinecraftTab from "./tabs/minecraft-tab.svelte";
-    import PixelArtTab from "./tabs/pixel-art-tab.svelte";
-	import MarketplaceTab from "./tabs/marketplace-tab.svelte";
+    import "./+page.css"
+    import Header from "./header.svelte";
+
+    import trees_pixel_art from "$lib/assets/personal-work/pixel-art/trees.png";
+    import MpTeamCard from "../components/cards/mp-team-card.svelte";
 	import NavButton from "../components/buttons/nav-button.svelte";
 
-    var tab_component = MinecraftTab;
-    var current_tab: string = "minecraft";
+    import cube_icon from "$lib/assets/icons/cube.svg";
+    import game_dev_icon from "$lib/assets/icons/game_dev.svg";
+    import pixel_art_icon from "$lib/assets/icons/pixel_art.svg";
 
-    function on_click(id: string) {
-        current_tab = id
-        check_tabs(current_tab)
-    }
-
-    function check_tabs(id: string) {
-        switch(id){
-            case "minecraft": {
-                tab_component = MinecraftTab;
-                console.log("minecraft");
-                break;
-            }
-            case "marketplace": {
-                tab_component = MarketplaceTab;
-                console.log("marketplace");
-                break;
-            }
-            case "pixelart": {
-                tab_component = PixelArtTab;
-                console.log("pixelart");
-                break;
-            }
-        }
-    }
 </script>
 
 
-<nav>
-    <ul>
-        <NavButton text="Minecraft" on_click={() => {on_click("minecraft")}} selected={current_tab=="minecraft"}></NavButton>
-        <NavButton text="Marketplace" on_click={() => {on_click("marketplace")}} selected={current_tab=="marketplace"}></NavButton>
-        <NavButton text="Pixel Art" on_click={() => {on_click("pixelart")}} selected={current_tab=="pixelart"}></NavButton>
+<Header></Header>
+
+
+<section class="about-me">
+    <div class="image-wrapper">
+        <img src={trees_pixel_art} alt="Pixel-Art Trees">
+    </div>
+    <div class="text">
+        <h1>About Me</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis voluptate nobis officiis sapiente nisi incidunt cumque maiores fuga quia et qui magni, doloribus repudiandae aperiam, modi esse, voluptatum dolores libero! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum recusandae nobis natus, odio cumque maxime? Vel optio doloribus ad dicta dignissimos ullam id obcaecati delectus, nesciunt natus odio ex nulla!</p>
+    </div>
+</section>
+
+<section class="previous-work">
+    <h1>Where I Worked</h1>
+    <ul class="contractors">
+        <MpTeamCard logo="src/lib/assets/marketplace-teams/xp-games.jpg" team_name="XP Games" description="as an Artist"></MpTeamCard>
+        <MpTeamCard logo="src/lib/assets/marketplace-teams/spark-universe.jpg" team_name="Spark Universe" description="as a Freelancer"></MpTeamCard>
+        <MpTeamCard logo="src/lib/assets/marketplace-teams/tinkrew.jpg" team_name="Tinkrew" description="as an Artist"></MpTeamCard>
+        <MpTeamCard logo="src/lib/assets/marketplace-teams/eternal-creations.jpg" team_name="Eternal Creations" description="as an Artist"></MpTeamCard>
     </ul>
-</nav>
+</section>
 
-<svelte:component this={tab_component}/>
-
+<h1>Active Projects</h1>
+<ul>
+    <button>Carnivore</button>
+</ul>
 
 
 <style>
-    nav {
-        margin: 2rem 10rem 2rem 10rem;
+    .about-me {
+        margin-top: 4rem;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 25rem;
+
+        justify-items: left;
+
+        position: relative;
     }
 
-    nav > ul {
-        padding: 0;
+    .about-me > .text {
+        margin-left: 1rem;
+    }
+
+    .about-me > .text > h1 {
+        margin: 0;
+        background-color: var(--primary-color-1);
+        padding: 1rem;
+    }
+
+    .text {
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+
+    .image-wrapper {
+        position: relative;
+    }
+
+    .image-wrapper > img {
+        height: 100%;
+    }
+
+
+    @media(max-width: 750px) {
+        .about-me {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        .text {
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .image-wrapper > img {
+            height: 60%;
+        }
+
+    }
+
+
+
+
+
+    
+    .previous-work {
+        font-size: 1.3rem;
+        margin-top: 4rem;
+    }
+
+    .previous-work > h1 {
+        padding: 1rem;
+        margin: 0;
+
+        width: 50%;
+
+        background-color: var(--primary-color-1);
+    }
+
+    .previous-work > .contractors {
         display: grid;
-        grid-auto-flow: column;
-        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--neutral-color-1);
+        border-radius: 0 1rem 1rem 1rem;
+        margin-top: 0;
+        padding: 1rem;
     }
 </style>
