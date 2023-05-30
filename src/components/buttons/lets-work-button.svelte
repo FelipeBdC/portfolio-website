@@ -21,7 +21,6 @@
         position: relative;
         z-index: 1;
 
-
         color: var(--neutral-color-0);
         background-color: var(--secondary-color-2);
 
@@ -60,8 +59,16 @@
 
     @media(max-width: 800px) {
         .button-wrapper {
-            place-content: end;
-            margin-top: 2em;
+            place-content: center;
+            margin: 0;
+        }
+
+        .button-slide-wrapper > button {
+            padding: 0.5rem 1rem 0.5rem 1rem;
+        }
+
+        button > strong {
+            font-size: small;
         }
     }
 
