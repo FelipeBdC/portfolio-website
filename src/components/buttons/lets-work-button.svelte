@@ -6,10 +6,10 @@
 
 <style>
     .button-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        justify-content: flex-end;
+        display: grid;
+        place-content: end;
+        width: 100%;
+        margin-top: 4rem;
     }
 
     .button-wrapper > .button-slide-wrapper {
@@ -57,4 +57,12 @@
     .button-slide-wrapper > button:hover::before, button:focus::before {
         transform: scaleX(1);
     }
+
+    @media(max-width: 800px) {
+        .button-wrapper {
+            place-content: end;
+            margin-top: 2em;
+        }
+    }
+
 </style>

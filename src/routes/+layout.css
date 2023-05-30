@@ -3,7 +3,7 @@
 html {
 
     --neutral-color-0: #16171d;
-    --neutral-color-1: #414249;
+    --neutral-color-1: #2f3036;
     --neutral-color-2: #6b6b6b;
 
     --primary-color-0: #0f058d;
@@ -22,16 +22,17 @@ html {
     height: 100%;
 
     display: grid;
-    place-items: center top;
+    place-items: center;
     width: min(100ch, calc(100% - 4rem));
     margin-inline: auto;
 }
 
 body {
     margin: 0;
+    height: 100%;
 }
 
-@media(max-width: 750px) {
+@media(max-width: 800px) {
     html {
         width: 100%;
     }

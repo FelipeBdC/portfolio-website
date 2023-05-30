@@ -1,12 +1,12 @@
 <script lang="ts">
-    export var logo: string = "";
+    export var src: any;
     export var team_name: string = "Team";
     export var description: string = "Description";
 </script>
 
 
 <div class="team-card">
-    <img src={logo} alt="{team_name} Logo">
+    <img src={src} alt="{team_name} Logo">
     <div class="info">
         <h2><strong>{team_name},</strong></h2>
         <p>{description}</p>
