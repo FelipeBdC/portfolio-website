@@ -19,7 +19,7 @@ html {
     
     background-repeat: no-repeat;
     background-color: var(--neutral-color-0);
-    height: 100%;
+    height: 100dvh;
 
     display: grid;
     place-items: center;
