@@ -36,11 +36,11 @@
 
     <section class="what-i-do">
         <section class="nav">
-            <h2>What I Do</h2>
+            <h2>Things I Do</h2>
             <div class="buttons">
                 <a class="button" id="button0" href="/pixel-art">Pixel Art</a>
                 <a class="button" id="button1" href="/minecraft-art">Minecraft Art</a>
-                <a class="button" id="button2" href="/game-dev">Game Development</a>
+                <a class="button" id="button2" href="/game-development">Game Development</a>
             </div>
         </section>
         <div class="image-wrapper">
