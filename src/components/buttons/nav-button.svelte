@@ -1,36 +1,24 @@
 <script lang="ts">
     export var href: string = "";
-    export var icon: any; // fuck you ts users
 </script>
 
 
-<a href={href}><img src={icon} alt="Icon"></a>
+<a href={href}><slot/></a>
 
 <style>
     a {
         all: unset;
-        padding: 0.5rem 1rem 0.5rem 1rem;
+        padding: 0.5rem 0 0.5rem 1rem;
+        text-align: left;
         border-radius: 1rem;
-
-        width: 14ch;
-
-        background-color: var(--secondary-color-2);
-        color: black;
-
-        display: grid;
-        place-items: center;
-
+        transition: 200ms ease-in;
+        cursor: pointer;
     }
 
-    a > img {
-        width: 6ch;
-        height: 6ch;
-    }
-
-    a:hover, a:focus {
-        background-color: var(--primary-color-2);
-        color: white;
-    }
+    a:hover {
+        background-color: var(--neutral-color-2);
+        padding-left: 1.5rem;
+}
 
 
 </style>

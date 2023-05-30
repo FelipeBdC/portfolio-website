@@ -1,5 +1,6 @@
 <script lang="ts">
-    import "./+page.css"
+    import "./header.css"
+    import "./things-i-do.css"
 
     import picture_felipe from "$lib/assets/picture-felipe.jpg";
     import trees_pixel_art from "$lib/assets/personal-work/pixel-art/tree.png";
@@ -13,6 +14,7 @@
     import game_dev_icon from "$lib/assets/icons/game_dev.svg";
     import pixel_art_icon from "$lib/assets/icons/pixel_art.svg";
 	import LetsWorkButton from "../components/buttons/lets-work-button.svelte";
+	import NavButton from "../components/buttons/nav-button.svelte";
 
 
 
@@ -34,13 +36,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="var(--neutral-color-1)"></path></svg>
     </header>
 
-    <section class="what-i-do">
+    <section class="things-i-do">
         <section class="nav">
             <h2>Things I Do</h2>
             <div class="buttons">
-                <a class="button" id="button0" href="/pixel-art">Pixel Art</a>
-                <a class="button" id="button1" href="/minecraft-art">Minecraft Art</a>
-                <a class="button" id="button2" href="/game-development">Game Development</a>
+                <NavButton href="/pixel-art">Pixel Art</NavButton>
+                <NavButton href="/minecraft-art">Minecraft Art</NavButton>
+                <NavButton href="/game-development">Game Development</NavButton>
             </div>
         </section>
         <div class="image-wrapper">
@@ -64,116 +66,7 @@
         margin: 0 8rem 0 8rem;
     }
 
-    header {
-        display: grid;
-        grid-auto-flow: column;
-        place-items: start;
-        position: relative;
-        width: 100%;
 
-        grid-template-columns: 1.5fr 2fr;
-    }
-
-    header > svg {
-        z-index: -1;
-        position: absolute;
-        transform: translate(0, -60%);
-        scale: 50%;
-    }
-
-    .image-wrapper {
-        background-color: var(--secondary-color-1);
-        border-radius: 1rem;
-        width: 100%;
-    }
-
-    .image-wrapper > img {
-        transform: translate(0.5rem, -0.5rem);
-        width: 100%;
-        border-radius: 1rem;
-    }
-
-    .text {
-        font-size: large;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        width: 100%;
-    }
-
-    .text > h1, p {
-        margin: 0 0 0 0;
-        padding-left: 1rem;
-    }
-
-    .text > h1 {
-        background-color: var(--primary-color-1);
-        border-radius: 0 4rem 0 0;
-
-        margin-bottom: 1rem;
-        padding: 0.5rem 2rem 0.5rem 2rem;
-        
-        display: flex;
-        align-items: center;
-    }
-
-
-
-
-
-    .what-i-do {
-        width: 100%;
-        background-color: var(--neutral-color-1);
-        border-radius: 1rem;
-
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: 1fr 0.6fr;
-        
-        justify-content: space-between;
-
-    }
-
-    .nav {
-        width: 100%;
-        transform: translate(0.5rem, -0.5rem);
-    }
-
-    .nav > h2 {
-        font-size: x-large;
-        margin: 0 0 1rem 0;
-        background-color: var(--primary-color-1);
-        border-radius: 0 0 4rem 0;
-
-        padding: 0.5rem 2rem 0.5rem 2rem;
-
-        width: 50%;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        font-size: large;
-        gap: 0.2rem;
-        width: 70%;
-    }
-
-    .button {
-        all: unset;
-        padding: 0.5rem 0 0.5rem 1rem;
-        text-align: left;
-        border-radius: 1rem;
-        transition: 200ms ease-in;
-        cursor: pointer;
-    }
-
-    .button:hover {
-        background-color: var(--neutral-color-2);
-        padding-left: 1.5rem;
-    }
-
-    .buttons > #button0 {
-
-    }
 
     @media(max-width: 1100px) {
         main {
@@ -211,9 +104,7 @@
             grid-template-rows: 1fr auto;
             grid-template-columns: 100%;
             gap: 1rem;
-
             justify-items: center;
-
         }
         
         .text > p {
@@ -230,7 +121,7 @@
             width: auto;
         }
 
-        .what-i-do {
+        .things-i-do {
             grid-template-columns: 1fr 0.2fr;
         }
     }
