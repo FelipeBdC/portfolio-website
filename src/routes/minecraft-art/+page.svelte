@@ -1,3 +1,7 @@
+<script>
+    import "./+page.css";
+</script>
+
 
 <main>
     <div class="text">
