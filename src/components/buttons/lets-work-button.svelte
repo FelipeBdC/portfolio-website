@@ -1,6 +1,6 @@
 <div class="button-wrapper">
     <div class="button-slide-wrapper">
-        <button><strong>Let's Work Together!</strong></button>
+        <button><strong>Let's Chat!</strong></button>
     </div>
 </div>
 
@@ -57,16 +57,15 @@
         transform: scaleX(1);
     }
 
-    @media(max-width: 800px) {
+    @media(max-width: 700px) {
         .button-wrapper {
-            place-content: center;
             margin: 0;
         }
 
         .button-slide-wrapper > button {
             padding: 0.5rem 1rem 0.5rem 1rem;
         }
-
+        
         button > strong {
             font-size: small;
         }

@@ -34,7 +34,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="var(--neutral-color-1)"></path></svg>
     </header>
 
-    <!-- <section class="what-i-do">
+    <section class="what-i-do">
         <section class="nav">
             <h2>What I Do</h2>
             <div class="buttons">
@@ -46,7 +46,7 @@
         <div class="image-wrapper">
             <img src={trees_pixel_art} alt="trees">
         </div>
-    </section> -->
+    </section>
     
 </main>
 
@@ -68,9 +68,7 @@
         display: grid;
         grid-auto-flow: column;
         place-items: start;
-
         position: relative;
-
         width: 100%;
 
         grid-template-columns: 1.5fr 2fr;
@@ -99,8 +97,6 @@
         font-size: large;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 100%;
-        height: 100%;
         width: 100%;
     }
 
@@ -111,6 +107,8 @@
 
     .text > h1 {
         background-color: var(--primary-color-1);
+        border-radius: 0 4rem 0 0;
+
         margin-bottom: 1rem;
         padding: 0.5rem 2rem 0.5rem 2rem;
         
@@ -119,32 +117,44 @@
     }
 
 
+
+
+
     .what-i-do {
         width: 100%;
-        height: 15rem;
+        background-color: var(--neutral-color-1);
+        border-radius: 1rem;
 
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns: 20rem 15rem;
-        grid-template-rows: 15rem;
-
+        grid-template-columns: 1fr 0.6fr;
+        
         justify-content: space-between;
+
     }
 
     .nav {
         width: 100%;
-        font-size: x-large;
+        transform: translate(0.5rem, -0.5rem);
     }
 
     .nav > h2 {
-        margin: 1rem 0 1rem 0;
+        font-size: x-large;
+        margin: 0 0 1rem 0;
         background-color: var(--primary-color-1);
+        border-radius: 0 0 4rem 0;
+
         padding: 0.5rem 2rem 0.5rem 2rem;
+
+        width: 50%;
     }
 
     .buttons {
         display: flex;
         flex-direction: column;
+        font-size: large;
+        gap: 0.2rem;
+        width: 70%;
     }
 
     .button {
@@ -153,10 +163,11 @@
         text-align: left;
         border-radius: 1rem;
         transition: 200ms ease-in;
+        cursor: pointer;
     }
 
     .button:hover {
-        background-color: var(--neutral-color-1);
+        background-color: var(--neutral-color-2);
         padding-left: 1.5rem;
     }
 
@@ -170,7 +181,7 @@
         }
     }
 
-    @media(max-width: 830px) {
+    @media(max-width: 700px) {
         .text > h1 {
             font-size: large;
             padding: 0.5rem 0 0.5rem 1rem;
@@ -178,6 +189,49 @@
 
         .text > p {
             font-size: small;
+        }
+
+        .nav > h2 {
+            font-size: medium;
+        }
+
+        .button {
+            font-size: small;
+            padding: 0.2rem 0 0.2rem 0.5rem;
+        }
+    }
+
+    @media(max-width: 300px) {
+        main {
+            margin: 0;
+        }
+
+        header {
+            grid-auto-flow: row;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: 100%;
+            gap: 1rem;
+
+            justify-items: center;
+
+        }
+        
+        .text > p {
+            padding: 0;
+        }
+
+        .image-wrapper {
+            height: 10rem;
+            width: auto;
+        }
+
+        .image-wrapper > img {
+            height: 100%;
+            width: auto;
+        }
+
+        .what-i-do {
+            grid-template-columns: 1fr 0.2fr;
         }
     }
 
