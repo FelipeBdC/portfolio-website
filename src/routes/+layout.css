@@ -29,8 +29,6 @@ html {
 
 body {
     margin: 0;
-    height: 100vh;
-    height: -webkit-fill-available;
 }
 
 @media(max-width: 800px) {
