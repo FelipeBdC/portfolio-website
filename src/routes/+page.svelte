@@ -4,15 +4,6 @@
 
     import picture_felipe from "$lib/assets/picture-felipe.jpg";
     import trees_pixel_art from "$lib/assets/personal-work/pixel-art/tree.png";
-
-    import xp_logo from "$lib/assets/marketplace-teams/xp-games.jpg";
-    import spark_logo from "$lib/assets/marketplace-teams/spark-universe.jpg";
-    import tinkrew_logo from "$lib/assets/marketplace-teams/tinkrew.jpg";
-    import eternal_logo from "$lib/assets/marketplace-teams/eternal-creations.jpg";
-
-    import cube_icon from "$lib/assets/icons/cube.svg";
-    import game_dev_icon from "$lib/assets/icons/game_dev.svg";
-    import pixel_art_icon from "$lib/assets/icons/pixel_art.svg";
 	import LetsWorkButton from "../components/buttons/lets-work-button.svelte";
 	import NavButton from "../components/buttons/nav-button.svelte";
 
@@ -87,11 +78,6 @@
         .nav > h2 {
             font-size: medium;
         }
-
-        .button {
-            font-size: small;
-            padding: 0.2rem 0 0.2rem 0.5rem;
-        }
     }
 
     @media(max-width: 300px) {
@@ -104,7 +90,9 @@
             grid-template-rows: 1fr auto;
             grid-template-columns: 100%;
             gap: 1rem;
+
             justify-items: center;
+
         }
         
         .text > p {
