@@ -39,7 +39,7 @@
         align-items: center;
         justify-content: center;
 
-        height: 100svh;
+        height: 100dvh;
         position: relative;
     }
 
