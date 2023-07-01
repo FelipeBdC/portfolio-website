@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Header from "./header.svelte";
 
-    import arrow_down_icon from "$lib/assets/icons/arrow-down-s-line.svg";
 
     import dragon_pixelart from "$lib/assets/personal-work/pixel-art/dragon.png";
     import shark_pixelart from "$lib/assets/personal-work/pixel-art/shark.png";
@@ -16,11 +15,6 @@
 <Header></Header>
 
 
-
-<div class="section-text">
-    <img src={arrow_down_icon} alt="">
-    <h1>My Work</h1>
-</div>
 
 <section class="showcase">
     <section class="top-bar">
@@ -46,24 +40,6 @@
 <style>
     h1 {
         margin: 0;
-    }
-    
-
-    .section-text {
-        display: flex;
-        justify-content: center;
-        gap: 0.2rem;
-        margin-bottom: 2rem;
-        padding: 1rem;
-
-    }
-    .section-text > img {
-        width: min(10vw, 3rem);
-    }
-    .section-text > h1 {
-        font-size: min(6vw, 2rem);
-        place-self: center;
-        text-align: center;
     }
 
 

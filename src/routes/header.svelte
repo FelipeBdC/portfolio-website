@@ -1,6 +1,7 @@
 <script>
     import pop_gif from "$lib/assets/personal-work/pixel-art/pop.gif";
 	import LetsWorkButton from "../components/buttons/lets-work-button.svelte";
+    import arrow_down_icon from "$lib/assets/icons/arrow-down-s-line.svg";
 </script>
 
 
@@ -19,6 +20,11 @@
         </section>
         <img src={pop_gif} alt="">
     </div>
+
+    <div class="section-text">
+        <img src={arrow_down_icon} alt="">
+        <h1>My Work</h1>
+    </div>
     
 </header>
 
@@ -33,7 +39,8 @@
         align-items: center;
         justify-content: center;
 
-        min-height: calc(100svh - 5rem);
+        height: 100svh;
+        position: relative;
     }
 
     .wrapper {
@@ -51,6 +58,29 @@
             flex-wrap: wrap;
         }
     }
+
+
+
+    .section-text {
+        display: flex;
+        justify-content: center;
+        gap: 0.2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+
+        position: absolute;
+        bottom: 0;
+
+    }
+    .section-text > img {
+        width: min(10vw, 3rem);
+    }
+    .section-text > h1 {
+        font-size: min(6vw, 2rem);
+        place-self: center;
+        text-align: center;
+    }
+
 
 
     .text {
