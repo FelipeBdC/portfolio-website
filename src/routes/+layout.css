@@ -1,38 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 
 html {
+    --neutral-color-0: #1d1e25;
+    --neutral-color-1: #30323a;
+    --neutral-color-15: #44444d;
+    --neutral-color-2: #5f5f66;
 
-    --neutral-color-0: #16171d;
-    --neutral-color-1: #2f3036;
-    --neutral-color-2: #6b6b6b;
+    --neutral-border-0: #3d4358;
 
-    --primary-color-0: #0f058d;
-    --primary-color-1: #1e4fd6;
-    --primary-color-2: #3baefc;
+    --primary-color-0: #0d4fa5;
+    --primary-color-1: #3b8ffc;
+    --primary-color-2: #50d6ff;
 
     --secondary-color-0: #b45d00;
     --secondary-color-1: #e68b00;
     --secondary-color-2: #f9c510;
+    --secondary-color-3: #ffd437;
+
+
+    width: min(100ch, calc(100% - 2rem));
+    margin-inline: auto;
+
 
     font-family: 'Wix Madefor Display', sans-serif;
     color: white;
-    
-    background-repeat: no-repeat;
-    background-color: var(--neutral-color-0);
-    height: -webkit-fill-available;
 
-    display: grid;
-    place-items: center;
-    width: min(100ch, calc(100% - 4rem));
-    margin-inline: auto;
+    background-color: var(--neutral-color-0);
 }
 
 body {
     margin: 0;
-}
-
-@media(max-width: 800px) {
-    html {
-        width: 100%;
-    }
 }
