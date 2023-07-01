@@ -33,7 +33,7 @@
         align-items: center;
         justify-content: center;
 
-        height: calc(100dvh - 5rem);
+        min-height: calc(100svh - 5rem);
     }
 
     .wrapper {
