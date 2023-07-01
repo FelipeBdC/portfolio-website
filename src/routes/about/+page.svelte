@@ -102,15 +102,14 @@
     }
 
     main > section {
-        padding: 1rem 0 1rem 2rem;
+        padding: 1rem;
         border: 2px solid var(--neutral-color-1);
     }
 
     .icons {
         margin-top: 1rem;
         display: flex;
-        place-content: center;
-        gap: 2rem;
+        place-content: space-evenly;
     }
 
     .program-icon {
