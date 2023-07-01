@@ -22,25 +22,24 @@
 <header>
     <div id="popup-container"></div>
     <img src={bar_pixelart} alt="">
-    <h1>What i can help you with?</h1>
+    <h1 class="big-text">Services</h1>
 </header>
 
 <main>
     <section>
-        <div class="big-text">
+        <div class="medium-text">
             <strong>Want me to join your team?</strong>
         </div>
         <div class="centered">
-            <div class="medium-text">Unavailable</div>
-            I'm currently contracted by XP Games
+            <div class="small-text">Unavailable</div>
         </div>
     </section>
     <section>
-        <div class="big-text">
-            <strong>Want to commission me?</strong>
+        <div class="medium-text">
+            <strong>Commissions</strong>
         </div>
         <div class="centered">
-            <div class="medium-text">Send me a DM!</div>
+            <div class="small-text">Send me a DM!</div>
             <div class="socials">
                 <button class="logo-button" on:mousedown={copy_discord}><img src={discord_logo} alt="Discord"></button>
                 <a href="https://twitter.com/felipe_does_pxl" target="_blank" class="logo-button"><img src={twitter_logo} alt="Twitter"></a>
@@ -55,9 +54,9 @@
 
 
 <style>
-    h1, .big-text, .medium-text {
-        cursor: default;
-    }
+
+
+    
 
 
     #popup-container {
@@ -75,7 +74,7 @@
 
     header > img {
         width: 100%;
-        max-height: 382px;
+        max-height: 40dvh;
         object-fit: cover;
         object-position: top;
         padding: 0.4rem;
@@ -85,16 +84,8 @@
     }
 
     h1 {
-        font-size: min(5vw, 2.5rem);
         text-align: center;
         margin: min(4vh, 4rem);
-    }
-
-    .big-text {
-        font-size: min(5vw, 2rem);
-    }
-    .medium-text {
-        font-size: min(4vw, 1.5rem);    
     }
 
     .centered {
@@ -104,15 +95,18 @@
         height: 100%;
     }
 
+
+
     main {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
         gap: min(2vh, 2rem);
     }
 
     section {
-        padding: 1.5rem;
-        flex-grow: 1;
+        padding: 2vh 1.5rem 2vh 1.5rem;
+
         text-align: center;
         border: 2px solid var(--neutral-color-1);
         transition: 500ms ease-out;
@@ -157,10 +151,15 @@
         display: flex;
     }
 
-    @media(max-width: 800px) {
+    @media(max-width: 700px) {
         footer {
             display: flex;
             justify-content: center;
+        }
+
+        main {
+            grid-auto-flow: row;
+            grid-auto-rows: 1fr 1fr;
         }
     }
 </style>

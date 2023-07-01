@@ -59,18 +59,6 @@
 
 
 <style>
-    h1, p, .medium-text, .big-text {
-        cursor: default;
-    }
-
-    .big-text {font-size: min(8vw, 2.4rem);}
-    .medium-text {font-size: min(5vw, 1.5rem);}
-    .small-text {font-size: min(4vw, 1.3rem);}
-
-    .text-justify {text-align: justify;}
-    .text-centered {text-align: center;}
-
-
 
     header {
         display: grid;
@@ -126,7 +114,7 @@
     }
 
 
-    @media(max-width: 800px) {
+    @media(max-width: 700px) {
         header {
             grid-auto-flow: row;
         }
