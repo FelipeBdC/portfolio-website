@@ -19,9 +19,9 @@
 
 </script>
 
-<header>
+<header class="centered">
+    <div class="overlay"></div>
     <div id="popup-container"></div>
-    <img src={bar_pixelart} alt="">
     <h1 class="big-text">Services</h1>
 </header>
 
@@ -69,31 +69,46 @@
 
     header {
         margin-top: min(2vh, 1rem);
-        max-width: 100%;
-    }
+        margin-bottom: 2rem;
 
-    header > img {
         width: 100%;
-        max-height: 40dvh;
-        object-fit: cover;
-        object-position: top;
-        padding: 0.4rem;
-        border: 2px solid var(--neutral-color-1);
 
+        min-height: 30dvh;
+        max-height: 40dvh;
+
+        border: 2px solid var(--neutral-color-1);
         box-sizing: border-box;
+
+        background-image: url("src/lib/assets/personal-work/pixel-art/mockup-bar.png");
+        background-size: cover;
+
+        position: relative;
     }
 
     h1 {
-        text-align: center;
-        margin: min(4vh, 4rem);
+        margin: 0;
+        z-index: 1;
     }
 
     .centered {
         display: flex;
         flex-direction: column;
         place-content: center;
+        text-align: center;
         height: 100%;
     }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: var(--neutral-color-0);
+        opacity: 60%;
+
+        z-index: 0;
+
+        position: absolute;
+    }
+
 
 
 
@@ -110,6 +125,8 @@
         text-align: center;
         border: 2px solid var(--neutral-color-1);
         transition: 500ms ease-out;
+
+        min-height: 30dvh;
     }
     section:hover {
         border-color: var(--neutral-color-2);

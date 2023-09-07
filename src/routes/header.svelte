@@ -2,28 +2,31 @@
     import pop_gif from "$lib/assets/personal-work/pixel-art/pop.gif";
 	import LetsWorkButton from "../components/buttons/lets-work-button.svelte";
     import arrow_down_icon from "$lib/assets/icons/arrow-down-s-line.svg";
+	import LinkButton from "../components/buttons/link_button.svelte";
 </script>
 
 
 
 <header>
+    <div class="background">
+        <div class="overlay"></div>
+    </div>
+
     <div class="wrapper">
         <section>
             <div class="text">
-                <h1>Felipe de Souza, 18</h1>
-                <h2><i>&gt i can bring your ideas to life</i></h2>
+                <h1>Felipe de Souza</h1>
+                <h2>welcome to my portfolio!</h2>
             </div>
             <nav>
-                <LetsWorkButton></LetsWorkButton>
-                <a href="/about">About Me</a>
+                <LinkButton url="/contact" text="Let's Chat"></LinkButton>
+                <LinkButton url="/about" text="About Me"></LinkButton>
             </nav>
         </section>
-        <img src={pop_gif} alt="">
     </div>
 
     <div class="section-text">
         <img src={arrow_down_icon} alt="">
-        <h1>My Work</h1>
     </div>
     
 </header>
@@ -33,6 +36,27 @@
     h1, h2 {
         margin: 0;
     }
+
+
+    .background {
+        position: absolute;
+
+        background-image: url("src/lib/assets/personal-work/pixel-art/mockup-bar.png");
+        background-size: cover;
+        background-position: center;
+        width: 100dvw;
+        height: 100%;
+
+        z-index: -1;
+    }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: var(--neutral-color-0);
+        opacity: 40%;
+    }
+
 
     header {
         display: flex;
@@ -56,6 +80,9 @@
     @media(max-width: 800px) {
         .wrapper {
             flex-wrap: wrap;
+        }
+        .wrapper > img {
+            width: 80%;
         }
     }
 
@@ -84,22 +111,23 @@
 
 
     .text {
-        border-left: 2px solid white;
-        padding: 1rem;
-        padding-left: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 6rem;
+        display: grid;
+        place-content: center;
     }
     
     .text > h1 {
-        font-size: min(8vw, 3rem);
-        margin-bottom: 1rem;
+        font-size: min(10vw, 4rem);
+        margin-bottom: 0.4ch;
     }
     .text > h2 {
-        font-size: min(4vw, 1.5rem);
+        font-size: min(5vw, 1.5rem);
+        text-align: center;
     }
 
     nav {
         display: flex;
+        place-content: center;
         gap: min(4vw, 2rem);
     }
 

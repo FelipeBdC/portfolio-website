@@ -18,7 +18,7 @@ html {
     --secondary-color-3: #ffd437;
 
 
-    width: min(100ch, calc(100% - 2rem));
+    width: min(90ch, calc(100% - 2rem));
     margin-inline: auto;
 
 
@@ -30,11 +30,12 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
 .big-text {font-size: min(8vw, 2.4rem);}
-.medium-text {font-size: min(6vw, 1.5rem);}
+.medium-text {font-size: min(4vw, 1.5rem);}
 .small-text {font-size: min(4vw, 1.3rem);}
 
 .text-justify {text-align: justify;}

@@ -8,6 +8,7 @@
     .button-wrapper {
         display: grid;
         place-content: start;
+        align-content: center;
 
 
         font-size: min(4vw, 1.2rem);

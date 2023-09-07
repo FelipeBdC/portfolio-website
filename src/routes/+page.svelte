@@ -6,6 +6,12 @@
     import shark_pixelart from "$lib/assets/personal-work/pixel-art/shark.png";
     import moth_pixelart from "$lib/assets/personal-work/pixel-art/moth.png";
     import jurassic_park from "$lib/assets/personal-work/pixel-art/jurassic-park.png";
+    import kelp_forest from "$lib/assets/personal-work/pixel-art/kelp-forest.png";
+    import morning_mountains from "$lib/assets/personal-work/pixel-art/morning-mountains.png";
+    import war_landscape from "$lib/assets/personal-work/pixel-art/war-landscape.png";
+    import frajola from "$lib/assets/personal-work/pixel-art/frajola.png";
+    import pop from "$lib/assets/commissioned-work/popvtuber/loading_screen.gif";
+    
  
 	import LinkButton from "../components/buttons/link_button.svelte";
 
@@ -17,19 +23,20 @@
 
 
 <section class="showcase">
-    <section class="top-bar">
-        <!-- <nav>
-            <button>Pixel Art</button>
-            <button>Minecraft</button>
-            <button>Game Dev</button>
-        </nav> -->
-        <LinkButton text="See More" url="/gallery"></LinkButton>
-    </section>
+    <div class="nav-wrapper">
+        <nav>
+            <button class="medium-text">Pixel Art</button>
+            <button class="medium-text">Minecraft</button>
+            <button class="medium-text">Game Dev</button>
+        </nav>
+    </div>
     <div class="art-pieces">
-        <img class="long-image left" src={jurassic_park} alt="">
+        <img class="long-image left" src={kelp_forest} alt="">
+        <img class="long-image" src={pop} alt="">
         <img src={shark_pixelart} alt="">
         <img src={dragon_pixelart} alt="">
-        <img class="long-image" src={moth_pixelart} alt="">
+        <img src={morning_mountains} alt="">
+        <img src={frajola} alt="">
     </div>
 </section>
 
@@ -38,63 +45,42 @@
 
 
 <style>
-    h1 {
-        margin: 0;
-    }
-
-
-
     .showcase {
         margin-bottom: 2rem;
-        border: 2px solid var(--neutral-color-1);
-        padding: min(2vh, 2rem);
+        margin-top: 2rem;
     }
 
-
-    .top-bar {
+    .showcase > .nav-wrapper {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: min(2vh, 2rem);
+        place-content: center;
     }
-    h1 {
-        font-size: min(6vw, 2rem);
-        place-self: center;
+
+    .nav-wrapper > nav {
+        display: flex;
+        gap: min(5vw, 5ch);
+
+        margin-top: 0;
+        margin-bottom: 2rem;
     }
-    .top-bar > nav {
-        display: grid;
-        grid-auto-flow: column;
-        place-items: center;
-        gap: 1rem;
-    }
-    .top-bar > nav > button {
-        all: unset;
-        padding: min(5vw, 0.5rem) min(8vw, 2rem) min(5vw, 0.5rem) min(8vw, 2rem);
-        border: 2px solid var(--neutral-color-2);
+
+    .nav-wrapper > nav > button {
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.2ch solid var(--neutral-color-0);
         color: white;
-        border-radius: 0.5rem;
-
-        cursor: pointer;
-
         place-self: center;
-        transition: 200ms ease-in;
-    }
-    .top-bar > nav > button:hover {
-        background-color: var(--neutral-color-2);
-        border-color: var(--neutral-color-2);
-        color: white;
-        transition: 200ms ease-out;
+        text-align: center;
+        transition: 400ms ease-out;
     }
 
-    .top-bar > nav > button:focus {
-        background-color: white;
-        border-color: white;
-        color: black;
-        transition: 200ms ease-out;
+    .nav-wrapper > nav > button:hover {
+        border-bottom: 0.2ch solid white;
+        transition: 200ms;
     }
     
     .art-pieces {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
     }
 
@@ -102,11 +88,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border: 2px solid var(--neutral-color-1);
+        border: 0.2ch solid var(--neutral-color-1);
+        grid-column: span 2;
     }
 
     .art-pieces > .long-image {
-        grid-column: span 2;
+        grid-column: span 4;
     }
 
     .left {

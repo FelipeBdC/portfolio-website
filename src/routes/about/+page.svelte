@@ -1,4 +1,7 @@
 <script lang="ts">
+    
+    import velociraptor_gif from "$lib/assets/personal-work/minecraft/velociraptor.gif";
+
     import picture_felipe from "$lib/assets/picture-felipe.jpg";
     import aseprite_icon from "$lib/assets/icons/aseprite-svgrepo-com.svg";
     import blockbench_icon from "$lib/assets/icons/blockbench_logo_white.svg";
@@ -35,24 +38,30 @@
 </header>
 
 <main>
-    <section>
-        <div class="medium-text text-centered">Software I use</div>
-        <div class="icons">
-            <img id="aseprite-icon" class="program-icon" src={aseprite_icon} alt="Aseprite">
-            <img class="program-icon" src={blockbench_icon} alt="Blockbench">
-        </div>
+    <section class="info">
+        <section>
+            <div class="medium-text">Software I use</div>
+            <div class="icons">
+                <img id="aseprite-icon" class="program-icon" src={aseprite_icon} alt="Aseprite">
+                <img class="program-icon" src={blockbench_icon} alt="Blockbench">
+            </div>
+        </section>
+
+        <section>
+            <div class="medium-text">
+                Teams I've collaborated with
+            </div>
+            <div class="icons">
+                <img class="program-icon icon-border" src={xp_games_logo} alt="">
+                <img class="program-icon icon-border" src={spark_universe_logo} alt="">
+                <img class="program-icon icon-border" src={eternal_creations_logo} alt="">
+                <img class="program-icon icon-border" src={kubo_studios_logo} alt="">
+            </div>
+        </section>
     </section>
-    
-    <section>
-        <div class="medium-text text-centered">
-            Teams I've collaborated with
-        </div>
-        <div class="icons">
-            <img class="program-icon icon-border" src={xp_games_logo} alt="">
-            <img class="program-icon icon-border" src={spark_universe_logo} alt="">
-            <img class="program-icon icon-border" src={eternal_creations_logo} alt="">
-            <img class="program-icon icon-border" src={kubo_studios_logo} alt="">
-        </div>
+
+    <section id="velociraptor">
+        <img src="{velociraptor_gif}" alt="">
     </section>
 </main>
 
@@ -67,7 +76,7 @@
         gap: 1rem;
 
         margin-top: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     header > img {
@@ -87,17 +96,27 @@
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
         gap: min(3vh, 1rem);
+        border: 2px solid var(--neutral-color-1);
     }
 
-    main > section {
+    #velociraptor {
+        place-self: center;
+    }
+
+    main > .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info > section {
         padding: 1rem;
-        border: 2px solid var(--neutral-color-1);
     }
 
     .icons {
         margin-top: 1rem;
         display: flex;
-        place-content: space-evenly;
+        gap: 2ch;
     }
 
     .program-icon {
